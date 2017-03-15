@@ -21,6 +21,9 @@ public class Review {
     @JsonProperty("text")
     public String text;
 
+    @JsonProperty("business_id")
+    public String business_id;
+
     public class Votes {
         @JsonProperty("funny")
         public String funny;

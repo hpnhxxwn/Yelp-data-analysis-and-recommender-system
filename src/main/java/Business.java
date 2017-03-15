@@ -5,6 +5,7 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
 import java.util.List;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Business {
     @JsonProperty("user_id")
     public String user_id;
@@ -15,7 +16,7 @@ public class Business {
     @JsonProperty("full_address")
     public String full_address;
 
-    @JsonProperty("open")
+    @JsonProperty("is_open")
     public boolean open;
 
     @JsonProperty("categories")
@@ -26,4 +27,9 @@ public class Business {
 
     @JsonProperty("review_count")
     public String reviewCount;
+
+    @JsonProperty("name")
+    public String name;
+
+
 }
