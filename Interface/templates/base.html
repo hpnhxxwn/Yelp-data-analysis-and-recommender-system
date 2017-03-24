@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>DE project UI implementation</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+  <!-- APP js -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <!-- add d3 from web -->
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  
+</head>
+
+<style>
+body {
+  margin: 0;
+  min-width: 960px;
+}
+rect {
+  fill: none;
+  pointer-events: all;
+}
+circle {
+  fill: none;
+  stroke-width: 2.5px;
+}
+</style>
+
+<body>
+  <h1 style="color:#55ACEE"> Real-Time Analytics with Storm+kafka+spark</h1>
+  <div id="result">here is result</div>
+</body>
+<script>
+ var source = new EventSource('/stream');
+    source.onmessage = function(e) {
+       document.getElementById("result").innerHTML+= e.data + '<br>';
+    };
+</script>
+</html>

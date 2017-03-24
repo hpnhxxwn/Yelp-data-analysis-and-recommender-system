@@ -1,0 +1,10 @@
+from flask import Flask, render_template, Response
+app = Flask(__name__)
+if __name__ == '__main__':
+    app.run(threaded=True,
+    host='0.0.0.0'
+)
+
+@app.route('/demo')
+def demo():
+      return render_template('hello.html')

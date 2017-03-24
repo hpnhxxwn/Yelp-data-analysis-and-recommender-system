@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>DE project UI demo</title>
+  <script src="/static/app.js"></script>
+</head>
+<body>
+  <h1 style="color:#55ACEE"> demo ui and play with easy html </h1>
+  <div id="results">here is demo</div>
+  <div id="result"></div>
+</body>
+<script>
+ var source = new EventSource('/stream');
+    source.onmessage = function(e) {
+       document.getElementById("result").innerHTML+= e.data + '<br>';
+    };
+</script>
